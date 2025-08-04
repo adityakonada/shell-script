@@ -1,5 +1,6 @@
 #!/bin/bash
-
+PERSON1=$1
+PERSON2=$2
 echo "$PERSON1: Hey $PERSON2, long time no see! How have you been?"
 echo "$PERSON2: I’ve been good, just super busy with work. You?"
 echo "$PERSON1: Same here! We should totally catch up sometime."
