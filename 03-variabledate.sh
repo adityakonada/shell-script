@@ -1,5 +1,5 @@
 #!/bin/bash
 
-TODAYDATE=$(date)
+RIGHTNOW=$(date)
 
-echo "the date and time is:$TODAYDATE"
+echo "script started executing at :$RIGHTNOW"
