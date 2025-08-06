@@ -34,7 +34,7 @@ VALIDATE $? "MySQL"
 # $1 = argument 1 = $? --> status of previous command (if 0=sucess, not 0= fail) --> status of dnf install mysql -y
 # $2 = argument 2 = "Mysql"
 
-dnf install gate -y &>> $LOG_FILE
+dnf install gittt -y &>> $LOG_FILE
 
 VALIDATE $? "GIT"
 
