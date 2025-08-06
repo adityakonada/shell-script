@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ID =$(id)
+ID =$(id -u)
 
 if [ $ID -gt 0 ]
 then
