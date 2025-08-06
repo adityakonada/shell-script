@@ -6,7 +6,7 @@ VALIDATE(){
     if [ $1 -ne 0 ]
     then 
         echo "ERROR:: $2 Installing is failed"
-        exit 1 #random number other than 0
+        exit 2 #random number other than 0
     else
         echo " $2 Installing is success"
     fi
