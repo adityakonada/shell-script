@@ -18,3 +18,4 @@ then
     exit 7
 else
     echo "MySQL installing is success"
+fi
