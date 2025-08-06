@@ -2,7 +2,7 @@
 
 ID=$(id -u)
 
-echo "$0 :: script-name"
+echo "$0 ::  is the script-name"
 VALIDATE(){
     if [ $1 -ne 0 ] #$1 =argument 1 comes from below - line 26
     then 
