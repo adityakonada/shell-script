@@ -10,7 +10,7 @@ else
      echo "You are Root user"
 fi #fi means reverse of if condition, indicating to end if condition.
 
-dnf install mysqllll -y
+dnf install mysql -y
 
 if [ $? -ne 0 ]
 then 
