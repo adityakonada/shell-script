@@ -20,11 +20,11 @@ VALIDATE(){
 
 if [ $ID -ne 0 ]
 then
-    echo "You are not root user. Please run script with root access man"
+    echo -e "You are $R not root user $N. Please run script with root access man"
     exit 1 # you are asking program to exit from here, do not process further.
             # You can give any number other than 0
 else
-     echo "You are Root user"
+     echo -e "$G You are Root user"
 fi #fi means reverse of if condition, indicating to end if condition.
 
 dnf install mysql -y &>> $LOG_FILE #ex: ls -ltr &> temp.log --(output of ls -ltr WONT display and it is stored in a just created file called tmp.log)
