@@ -9,7 +9,7 @@ N="\e[0m"
 
 LOG_FILE="/tmp/$0-$TIMESTAMP.log" # --> $0 = file_name-date-time.log --> In this format the name of file.log will be stored 
 
-echo "Script started executing at $TIMESTAMP" &>> $LOG_FILE
+echo "Script started executing at $TIMESTAMP" &>> $LOG_FILE # &>> is rediction concept
 
 VALIDATE(){
     if [ $1 -ne 0 ] #$1 =argument 1 comes from below - line 26
