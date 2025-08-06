@@ -25,7 +25,7 @@ dnf install git -y
 if [ $? -ne 0 ]
 then 
     echo "ERROR:: Installing GIT is failed"
-    exit 1 #random number other than 0
+    exit 3 #random number other than 0
 else
     echo "GIT installing is success"
 fi
