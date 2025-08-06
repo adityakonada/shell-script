@@ -1,10 +1,10 @@
 #!/bin/bash
 
-ID =$(id -u)
+ID =$(id)
 
-if [ $ID -gt 0 ]
+if [ $ID -ne 0 ]
 then
-    echo "You are not root user"
+    echo "You are not root user. Please run script with root access man"
 else
-    echo "You are Root user"
+     echo "You are Root user"
 fi
