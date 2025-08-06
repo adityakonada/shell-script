@@ -8,6 +8,9 @@ Y="\e[33m"
 N="\e[0m"
 
 LOG_FILE="/tmp/$0-$TIMESTAMP.log" # --> $0 = file_name-date-time.log --> In this format the name of file.log will be stored 
+
+echo "Script started executing at $TIMESTAMP" &>> $LOG_FILE
+
 VALIDATE(){
     if [ $1 -ne 0 ] #$1 =argument 1 comes from below - line 26
     then 
@@ -27,7 +30,8 @@ else
      echo -e "$G You are Root user"
 fi #fi means reverse of if condition, indicating to end if condition.
 
-dnf install mysql -y &>> $LOG_FILE #ex: ls -ltr &> temp.log --(output of ls -ltr WONT display and it is stored in a just created file called tmp.log)
+dnf install mysql -y &>> $LOG_FILE #ex: ls -ltr &> temp.log --(Redirection concept):
+                                    #output of ls -ltr WONT display and it is stored in a just created file called tmp.log)
 
 VALIDATE $? "MySQL" 
 #here, we are passing 2 arguments into function
