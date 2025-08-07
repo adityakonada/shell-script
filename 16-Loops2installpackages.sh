@@ -33,10 +33,13 @@ else
      echo -e "$G You are Root user $N"
 fi #fi means reverse of if condition, indicating to end if condition.
 
-dnf install git -y &>> LOG_FILE
-
-VALIDATE $? "GIT"
-
-dnf install mysql -y &>> LOG_FILE
-
-VALIDATE $? "mysql"
+for package in $@ #this is same as python, for x in dogs: (x is temp holder in dogs). Here, in ec2 linux, the command will be # sudo sh 16-loops2installpackages.sh git mysql etc etc...
+do 
+    dnf list installed $package &>> LOG_FILE #This gives the list of already installed packages. For ex: dnf list installed git --> gives if git installed or not.
+    if [ $? -ne 0 ] # if $? = 0 for the above cmd, git is already installed.
+    then
+        dnf install $package &>> LOG_FILE
+        VALIDATE $? "Installation of $package"
+    else
+        echo -e "this $package is already installed, so $Y skipping $N"
+done
