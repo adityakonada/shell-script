@@ -38,8 +38,9 @@ do
     dnf list installed $package &>> LOG_FILE #This gives the list of already installed packages. For ex: dnf list installed git --> gives if git installed or not.
     if [ $? -ne 0 ] # if $? = 0 for the above cmd, git is already installed.
     then
-        dnf install $package &>> LOG_FILE
+        dnf install $package -y &>> LOG_FILE
         VALIDATE $? "Installation of $package"
     else
         echo -e "this $package is already installed, so $Y skipping $N"
+    fi
 done
