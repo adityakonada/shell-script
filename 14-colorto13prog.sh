@@ -12,7 +12,7 @@ LOG_FILE="/tmp/$0-$TIMESTAMP.log" # --> $0 = file_name-date-time.log --> In this
 echo "Script started executing at $TIMESTAMP" &>> $LOG_FILE # &>> is rediction concept
 
 VALIDATE(){
-    if [ $1 -ne 0 ] #$1 =argument 1 comes from below - line 26
+    if [ $1 -ne 0 ] #$1 =argument 1 comes from below - line 36
     then 
         echo -e "$R ERROR $N:: $2 Installing is $R failed" #$2 =argument 2 comes from below - line 26
         exit 1 #random number other than 0
@@ -38,7 +38,15 @@ VALIDATE $? "MySQL"
 # $1 = argument 1 = $? --> status of previous command (if 0=sucess, not 0= fail) --> status of dnf install mysql -y
 # $2 = argument 2 = "Mysql"
 
-dnf install git -y &>> $LOG_FILE
+for package in $@
+do 
+    dnf list installed $package &>> LOG_FILE
+    if [ $? -ne 0 ]
+    then
+        dnf install $package &>> LOG_FILE
+        VALIDATE $? "Installation of $package"
+    else
+        echo -e "this $package is already installed, so $Y skipping $N"
+done
 
-VALIDATE $? "GIT"
 
