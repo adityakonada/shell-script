@@ -30,9 +30,9 @@ then
     exit 1 # you are asking program to exit from here, do not process further.
             # You can give any number other than 0
 else
-     echo -e "$G You are Root user"
+     echo -e "$G You are Root user $N"
 fi #fi means reverse of if condition, indicating to end if condition.
 
-dnf install $@
+dnf install $@ -y &>> LOG_FILE
 
 VALIDATE $? "GIT"
