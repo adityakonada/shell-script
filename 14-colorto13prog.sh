@@ -38,15 +38,7 @@ VALIDATE $? "MySQL"
 # $1 = argument 1 = $? --> status of previous command (if 0=sucess, not 0= fail) --> status of dnf install mysql -y
 # $2 = argument 2 = "Mysql"
 
-for package in $@
-do 
-    dnf list installed $package &>> LOG_FILE
-    if [ $? -ne 0 ]
-    then
-        dnf install $package &>> LOG_FILE
-        VALIDATE $? "Installation of $package"
-    else
-        echo -e "this $package is already installed, so $Y skipping $N"
-done
+yum install git -y &>> $LOGFILE
 
+VALIDATE $? "Installing GIT"
 
