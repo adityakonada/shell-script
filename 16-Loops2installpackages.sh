@@ -33,6 +33,10 @@ else
      echo -e "$G You are Root user $N"
 fi #fi means reverse of if condition, indicating to end if condition.
 
-dnf install $@ -y &>> LOG_FILE
+dnf install git -y &>> LOG_FILE
 
 VALIDATE $? "GIT"
+
+dnf install mysql -y &>> LOG_FILE
+
+VALIDATE $? "mysql"
