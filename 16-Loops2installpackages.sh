@@ -13,7 +13,7 @@ LOG_FILE="/tmp/$0-$TIMESTAMP.log" # --> $0 = file_name-date-time.log --> In this
 echo "Script started executing at $TIMESTAMP" &>> $LOG_FILE # &>> is rediction concept
 
 VALIDATE(){
-    if [$1 -ne 0]
+    if [ $1 -ne 0 ]
     then
         echo -e "$2 installation $R error $N"
         exit 1
