@@ -8,7 +8,7 @@ Y="\e[33m"
 N="\e[0m"
 
 if [ ! -d $SOURCE_DIR ] 
-#-d -> to check if the directory exists or not
+#-d -> to check if the directory exists or not -f -> file exists or not
 # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
@@ -21,9 +21,9 @@ FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14 -name "*.log")
 
 #using while loop
 #IFS == Internal Field Separator; 
-while IFS= read -r line #while loop would read the output line by line
+while IFS= read -r line     #syntax to read line by line #while loop would read the output line by line
 do
     echo "Deleting file: $line" #reading/diplaying the line 
-    rm -rf $line #deleting the file
+    rm -rf $line #deleting the file #-r = recursive(including files inside) f=force
 done <<< $FILES_TO_DELETE
 # <<< giving the output of $FILES_TO_DELETE variable as INPUT to while loop
