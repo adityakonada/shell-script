@@ -13,5 +13,5 @@ while IFS=":" read -r f1 f2 f3 f4 f5 f6 f7
 do
     echo "username:$f1"
     echo "password:$2"
-    echo "user full name:$2"
+    echo "user full name:$3"
 done < $file
