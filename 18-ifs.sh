@@ -1,6 +1,6 @@
 #!bin/bash
 
-file=etc/passwd
+file=/etc/passwd
 
 if [ ! -f $file ]
 then 
