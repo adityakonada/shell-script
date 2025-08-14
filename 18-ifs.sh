@@ -9,7 +9,7 @@ else
     echo "found the file $file"
 fi
 
-while IFS=":" read -r f1 f2 f3 f4 f5 f6 f7 
+while IFS=":" read -r f1 f2 f3 f4 f5 f6 f7  #: is the field seperator # f1 f2 are the fragments
 do
     echo "username:$f1"
     echo "password:$2"
