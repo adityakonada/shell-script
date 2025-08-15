@@ -21,8 +21,8 @@ while getopts ":n:w:h" opt; do
     esac #oppsite of case
 done
 
-if [ -z "$NAME" ] || [ -z "$WISHES" ]; then
-#if [ -z "$NAME" ]; then # now wishes is optional
+#if [ -z "$NAME" ] || [ -z "$WISHES" ]; then
+if [ -z "$NAME" ]; then # now wishes is optional
     #echo "ERROR: Both -n and -w are mandatory options."
     echo "ERROR: -n is mandatory."
     USAGE
